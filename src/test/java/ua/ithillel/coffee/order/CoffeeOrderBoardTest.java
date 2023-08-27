@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
-import java.util.Arrays;
+import java.util.stream.Stream;
 
 public class CoffeeOrderBoardTest {
 
@@ -75,7 +75,7 @@ public class CoffeeOrderBoardTest {
         System.setOut(originalOut);
 
 
-        int maxNameLength = Arrays.asList("John", "Mary", "Obi-van", "John Snow").stream()
+        int maxNameLength = Stream.of("John", "Mary", "Obi-van", "John Snow")
                 .mapToInt(String::length)
                 .max()
                 .orElse(0);
